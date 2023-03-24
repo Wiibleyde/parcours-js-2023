@@ -53,3 +53,7 @@ function capitalize(stringVar) {
     let rest = stringVar.slice(1).toLowerCase()
     return first_char + rest
 }
+
+function yell(stringVar) {
+    return stringVar.toUpperCase();
+}
