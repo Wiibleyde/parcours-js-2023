@@ -1,3 +1,6 @@
-var circular = {
-    circular: circular
-}
+const circular = {
+    circular: null,
+};
+  
+circular.circular = circular;
+  
