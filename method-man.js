@@ -11,7 +11,7 @@ function yell(stringVar) {
 }
 
 function whisper(stringVar) {
-    return stringVar.toLowerCase();
+    return `*${stringVar.toLowerCase()}*`;
 }
 
 function capitalize(stringVar) {
