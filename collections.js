@@ -44,6 +44,6 @@ const superTypeOf = (value) => {
     } else if (value instanceof Set) {
         return 'Set';
     } else {
-        return typeof value;
+        return typeof capitalize(value);
     }
 }
