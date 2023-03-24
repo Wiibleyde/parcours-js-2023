@@ -3,5 +3,5 @@ function id(arg) {
 }
 
 function getLength(arrayVar) {
-    return arrayVar.length()
+    return arrayVar.length
 }
