@@ -3,5 +3,8 @@ function isPositive(number) {
 }
 
 function abs(number) {
-    return Math.abs(number);
+    if (isPositive(number)) {
+        return number;
+    }
+    return -number;
 }
