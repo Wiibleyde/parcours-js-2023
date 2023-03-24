@@ -1,1 +1,1 @@
-console.log('Hello World')
+console.log(concatStr(1,2))
