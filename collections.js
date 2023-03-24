@@ -43,10 +43,15 @@ const superTypeOf = (value) => {
         return 'Map';
     } else if (value instanceof Set) {
         return 'Set';
+    } else if (Array.isArray(value)) {
+        return 'Array';
     } else {
         let valueToChange = typeof value;
         let firstChar = valueToChange[0].toUpperCase();
         let rest = valueToChange.slice(1);
         return firstChar + rest;
     }
-}
+};
+
+
+console.log(superTypeOf([]));
