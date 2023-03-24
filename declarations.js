@@ -5,3 +5,4 @@ const nested = {
     "arr":[4,undefined,'2'],
     "obj":{"str":"Oui","num":1,"bool":true,"undef":undefined}
 }
+Object.freeze(nested)
