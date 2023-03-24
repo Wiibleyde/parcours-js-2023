@@ -47,3 +47,9 @@ const superTypeOf = (value) => {
         return typeof capitalize(value);
     }
 }
+
+function capitalize(stringVar) {
+    let first_char = yell(stringVar[0])
+    let rest = stringVar.slice(1).toLowerCase()
+    return first_char + rest
+}
