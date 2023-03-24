@@ -31,7 +31,7 @@ function dogYears(planet, ageInSeconds) {
             throw new Error("Unknown planet: " + planet);
     }
   
-    const ageInYears = ageInSeconds / (earthYearInSeconds * orbitalPeriod * 7);
+    const ageInYears = ageInSeconds / (earthYearInSeconds * orbitalPeriod);
     const ageInDogYears = ageInYears * 7;
     return parseFloat(ageInDogYears.toFixed(2));
 }
