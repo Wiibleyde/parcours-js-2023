@@ -1,4 +1,4 @@
-const escapeStr = "Oui`\/'"+'"'
+const escapeStr = "Oui`\\//'"+'"'
 const arr = [4,'2']
 const obj = {"str":"Oui","num":1,"bool":true,"undef":undefined}
 const nested = {
