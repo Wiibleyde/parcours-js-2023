@@ -3,10 +3,8 @@ function isPositive(number) {
 }
 
 function abs(number) {
-    if (isPositive(number)) {
+    if (number >= 0) {
         return number;
     }
     return -number;
 }
-
-console.log(abs(0))
