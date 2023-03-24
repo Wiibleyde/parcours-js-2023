@@ -44,11 +44,9 @@ const superTypeOf = (value) => {
     } else if (value instanceof Set) {
         return 'Set';
     } else {
-        valueToChange = typeof value;
-        firstChar = valueToChange[0].toUpperCase();
-        rest = valueToChange.slice(1);
+        let valueToChange = typeof value;
+        let firstChar = valueToChange[0].toUpperCase();
+        let rest = valueToChange.slice(1);
         return firstChar + rest;
     }
 }
-
-console.log(superTypeOf({}))
