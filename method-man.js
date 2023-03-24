@@ -15,5 +15,9 @@ function whisper(stringVar) {
 }
 
 function capitalize(stringVar) {
-    return stringVar[0].toUpperCase() + stringVar.slice(1);
+    first_char = yell(stringVar[0])
+    rest = stringVar.slice(1).toLowerCase()
+    return first_char + rest
 }
+
+console.log(capitalize('STR'))
