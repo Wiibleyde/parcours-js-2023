@@ -35,7 +35,3 @@ function dogYears(planet, ageInSeconds) {
     const ageInDogYears = ageInYears * 7;
     return parseFloat(ageInDogYears.toFixed(2));
 }
-  
-  
-const ageOnEarth = dogYears("earth", 1000000000);
-console.log("Dog's age on Earth: " + ageOnEarth + " years");
