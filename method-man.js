@@ -15,8 +15,8 @@ function whisper(stringVar) {
 }
 
 function capitalize(stringVar) {
-    first_char = yell(stringVar[0])
-    rest = stringVar.slice(1).toLowerCase()
+    let first_char = yell(stringVar[0])
+    let rest = stringVar.slice(1).toLowerCase()
     return first_char + rest
 }
 
