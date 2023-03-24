@@ -52,7 +52,7 @@ const superTypeOf = (value) => {
     } else if (typeof value === 'boolean') {
         return 'Boolean';
     } else if (typeof value === 'undefined') {
-        return 'Undefined';
+        return 'undefined';
     } else if (typeof value === 'function') {
         return 'Function';
     } else if (value === null) {
