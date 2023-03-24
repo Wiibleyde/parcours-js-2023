@@ -45,8 +45,6 @@ const superTypeOf = (value) => {
         return 'Set';
     } else if (Array.isArray(value)) {
         return 'Array';
-    } else if (typeof value === 'object') {
-        return 'Object';
     } else if (typeof value === 'string') {
         return 'String';
     } else if (typeof value === 'number') {
@@ -58,7 +56,7 @@ const superTypeOf = (value) => {
     } else if (typeof value === 'function') {
         return 'Function';
     } else if (value === null) {
-        return 'Null';
+        return 'null';
     } else {
         let valueToChange = typeof value;
         let firstChar = valueToChange[0].toUpperCase();
@@ -68,4 +66,4 @@ const superTypeOf = (value) => {
 };
 
 
-console.log(superTypeOf([]));
+console.log(superTypeOf(null));
