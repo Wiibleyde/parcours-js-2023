@@ -3,7 +3,7 @@ function first(arrayVar) {
 }
 
 function last(arrayVar) {
-    return parseInt(arrayVar.slice(-1))
+    return arrayVar[arrayVar.length - 1]
 }
 
 function kiss(arg) {
