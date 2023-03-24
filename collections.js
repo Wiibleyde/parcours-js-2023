@@ -44,16 +44,11 @@ const superTypeOf = (value) => {
     } else if (value instanceof Set) {
         return 'Set';
     } else {
-        return typeof capitalize(value);
+        valueToChange = typeof value;
+        firstChar = valueToChange[0].toUpperCase();
+        rest = valueToChange.slice(1);
+        return firstChar + rest;
     }
 }
 
-function capitalize(stringVar) {
-    let first_char = yell(stringVar[0])
-    let rest = stringVar.slice(1).toLowerCase()
-    return first_char + rest
-}
-
-function yell(stringVar) {
-    return stringVar.toUpperCase();
-}
+console.log(superTypeOf({}))
