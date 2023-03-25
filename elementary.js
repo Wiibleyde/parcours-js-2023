@@ -6,15 +6,15 @@ function multiply(a, b) {
             b = -b;
             a = -a;
         } else {
-            negative = true;        
+            negative = true;
+            if (b < 0) {
+                b = -b;
+            }
+            if (a < 0) {
+                a = -a;
+            }
         }
-        if (b < 0) {
-            b = -b;
-        }
-        if (a < 0) {
-            a = -a;
-        }
-    } 
+    }
     for (let i = 0; i < b; i++) {
         result += a;
     }
@@ -28,12 +28,17 @@ function divide(a, b) {
     let result = 0;
     let negative = false;
     if (b < 0 || a < 0) {
-        negative = true;
-        if (b < 0) {
+        if (b < 0 && a < 0) {
             b = -b;
-        }
-        if (a < 0) {
             a = -a;
+        } else {
+            negative = true;
+            if (b < 0) {
+                b = -b;
+            }
+            if (a < 0) {
+                a = -a;
+            }
         }
     }
     while (a >= b) {
@@ -49,12 +54,17 @@ function divide(a, b) {
 function modulo (a, b) {
     let negative = false;
     if (b < 0 || a < 0) {
-        negative = true;
-        if (b < 0) {
+        if (b < 0 && a < 0) {
             b = -b;
-        }
-        if (a < 0) {
             a = -a;
+        } else {
+            negative = true;
+            if (b < 0) {
+                b = -b;
+            }
+            if (a < 0) {
+                a = -a;
+            }
         }
     }
     while (a >= b) {
@@ -66,4 +76,4 @@ function modulo (a, b) {
     return a;
 }
 
-console.log(multiply(-22, -123));
+console.log(divide(-123, -22));
