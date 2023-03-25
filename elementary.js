@@ -54,26 +54,17 @@ function divide(a, b) {
 function modulo (a, b) {
     let negative = false;
     if (b < 0 || a < 0) {
-        if (b < 0 && a < 0) {
+        if (b < 0) {
             b = -b;
+        }
+        if (a < 0) {
             a = -a;
-        } else {
-            negative = true;
-            if (b < 0) {
-                b = -b;
-            }
-            if (a < 0) {
-                a = -a;
-            }
         }
     }
     while (a >= b) {
         a -= b;
     }
-    if (negative) {
-        a = -a;
-    }
     return a;
 }
 
-console.log(divide(-123, -22));
+console.log(modulo(123, -22));
