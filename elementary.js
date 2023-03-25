@@ -2,8 +2,12 @@ function multiply(a, b) {
     let result = 0;
     let negative = false;
     if (b < 0 || a < 0) {
-        negative = true;
-        
+        if (b < 0 && a < 0) {
+            b = -b;
+            a = -a;
+        } else {
+            negative = true;        
+        }
         if (b < 0) {
             b = -b;
         }
@@ -62,4 +66,4 @@ function modulo (a, b) {
     return a;
 }
 
-console.log(multiply(123, -22));
+console.log(multiply(-22, -123));
