@@ -58,13 +58,17 @@ function modulo (a, b) {
             b = -b;
         }
         if (a < 0) {
+            negative = true;
             a = -a;
         }
     }
     while (a >= b) {
         a -= b;
     }
+    if (negative) {
+        a = -a;
+    }
     return a;
 }
 
-console.log(modulo(123, -22));
+console.log(modulo(-123, 22));
