@@ -73,26 +73,19 @@ function floor(n) {
 }
 
 function trunc(n) {
-
-    let mod
-    let res
-
+    let mod = modulo(n, 1);
+    let res = n - mod;
+    
     if (n > 68719476730) {
-        return +(n).toFixed(0)
-    }
-
-    mod = modulo(n,1)
-    
-    if (n > 0 && mod != 0) {
-        return res = n - mod
+        if (res < 0) {
+            return ceil(res);
+        } else {
+            return floor(res);
+        }
     } else {
-        let x
-        x = 1 + mod
-        return res = n - mod
+      return res;
     }
-    
-    return n
-}
+}  
 
 function modulo (a, b) {
 
