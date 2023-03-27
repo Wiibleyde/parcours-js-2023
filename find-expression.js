@@ -1,6 +1,3 @@
-const add4 = (x) => x + 4;
-const mul2 = (x) => x * 2;
-
 function findExpression(num) {
     const queue = [{ val: 1, expr: '1' }];
 
