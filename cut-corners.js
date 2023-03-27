@@ -1,34 +1,38 @@
-Math.round = Math.ceil = Math.floor = Math.trunc = undefined
-
 function round(number) {
-    let decimal = number - Math.floor(number);
-    if (decimal >= 0.5) {
-        return Math.sign(number) * (Math.abs(Math.floor(number)) + 1);
+    let integerPart = number >= 0 ? parseInt(number) : parseInt(number-1);
+    let decimalPart = Math.abs(number - integerPart);
+    
+    if (decimalPart >= 0.5) {
+        return integerPart + Math.sign(number);
     } else {
-        return Math.floor(number);
+        return integerPart;
     }
 }
-    
+  
 function ceil(number) {
-    if (Number.isInteger(number)) {
-        return number;
+    let integerPart = parseInt(number);
+    
+    if (integerPart === number) {
+        return integerPart;
     } else if (number > 0) {
-        return Math.floor(number) + 1;
+        return integerPart + 1;
     } else {
-        return Math.floor(number);
+        return integerPart;
     }
 }
-    
+  
 function floor(number) {
-    return Math.floor(number);
+    let integerPart = parseInt(number);
+    return integerPart;
 }
-    
+  
 function trunc(number) {
     if (number >= 0) {
-        return Math.floor(number);
+          return parseInt(number);
     } else {
-        return Math.ceil(number);
+          return parseInt(number+1);
     }
 }
 
-console.log(round(1.5))
+
+console.log(round(1.1))
