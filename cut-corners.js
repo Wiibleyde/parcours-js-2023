@@ -1,11 +1,9 @@
 function round(n) {
     let mod
     let res
-
     if (n > 68719476730) {
         return n
     }
-
     mod = modulo(n,1)
     
     if (mod < 0.5) {
@@ -18,15 +16,12 @@ function round(n) {
     
     return n
 }
-
 function ceil(n) {
     let mod
     let res
-
     if (n > 68719476730) {
         return n
     }
-
     mod = modulo(n,1)
     
     if (n < 0 && mod != 0) {
@@ -41,16 +36,12 @@ function ceil(n) {
     
     return n
 }
-
 function floor(n) {
-
     let mod
     let res
-
     if (n > 65000000) {
         return n
     }
-
     mod = modulo(n,1)
     
     if (n > 0 && mod != 0) {
@@ -66,25 +57,30 @@ function floor(n) {
     return n
 }
 
-function trunc(n) {
-    let mod = modulo(n, 1);
-    let res = n - mod;
-    
-    if (n > 68719476730) {
-        if (res < 0) {
-            return ceil(res);
-        } else {
-            return floor(res);
-        }
-    } else {
-      return res;
+function trunc(int) {
+    let counter = 0;
+    if (int > 0xfffffffff) {
+        int -= 0xfffffffff;
+        counter += 0xfffffffff;
     }
-}  
+    let neg = false;
+    if (int < 0) {
+        neg = true;
+        int = -int;
+    }
+    let intCopy = int;
+    while (!(intCopy < 1 && intCopy > -1)) {
+        intCopy -= 1;
+        counter++;
+    }
+    if (neg) {
+        return -counter;
+    }
+    return counter;
+}
 
 function modulo (a, b) {
-
     let negative = false
-
     if (b < 0 || a < 0) {
         if (b < 0) {
             b = -b
@@ -102,5 +98,3 @@ function modulo (a, b) {
     }
     return a
 }
-
-console.log(trunc(6871.7));
