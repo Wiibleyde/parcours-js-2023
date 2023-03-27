@@ -78,7 +78,7 @@ function trunc(n) {
     let res
 
     if (n > 68719476730) {
-        return n
+        return +(n).toPrecision(11)
     }
 
     mod = modulo(n,1)
