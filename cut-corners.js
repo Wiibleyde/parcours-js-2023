@@ -63,7 +63,6 @@ function ceil(int) {
     }
 }
 
-
 function trunc(int) {
     let counter = 0;
     if (int > 0xfffffffff) {
