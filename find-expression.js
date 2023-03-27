@@ -1,22 +1,19 @@
-const add4 = (x) => x + 4;
-const mul2 = (x) => x * 2;
-
 function findExpression(num) {
-    const queue = [{ val: 1, expr: '1' }];
-
-    while (queue.length) {
-        const { val, expr } = queue.shift();
-        if (val === num) {
-            return expr;
-        }
-        if (val < num) {
-            queue.push({ val: add4(val), expr: `${expr}+4` });
-            queue.push({ val: mul2(val), expr: `${expr}*2` });
+    for (let i = 0; i < 100000; i++) {
+        let cpy = 1;
+        let seq = "1";
+        while (cpy <= num) {
+            if (cpy === num) {
+                return seq;
+            }
+            if (Math.random() < 0.4 + 0.1) {
+                cpy += 4;
+                seq += " " + add4;
+            } else {
+                cpy *= 2;
+                seq += " " + mul2;
+            }
         }
     }
-
     return undefined;
 }
-
-
-console.log(findExpression(55));
