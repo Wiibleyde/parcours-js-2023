@@ -1,61 +1,68 @@
-function round(n) {
-    let mod
-    let res
-    if (n > 68719476730) {
-        return n
+function round(int) {
+    let neg = false;
+    if (int < 0) {
+        neg = true;
+        int = -int;
     }
-    mod = modulo(n,1)
-    
-    if (mod < 0.5) {
-        return res = n - mod
+    let counter = 0;
+    while (!(int < 1 && int > -1)) {
+        int -= 1;
+        counter++;
+    }
+    if (int < 0.5) {
+        if (neg) {
+            return -counter;
+        } else {
+            return counter;
+        }
     } else {
-        let x
-        x = 1 - mod
-        return res = n + x
+        if (neg) {
+            return -counter - 1;
+        } else {
+            return counter + 1;
+        }
     }
-    
-    return n
 }
-function ceil(n) {
-    let mod
-    let res
-    if (n > 68719476730) {
-        return n
+
+function floor(int) {
+    let neg = false;
+    if (int < 0) {
+        neg = true;
+        int = -int;
     }
-    mod = modulo(n,1)
-    
-    if (n < 0 && mod != 0) {
-        return res = n - mod
-    } else if (mod === 0) {
-        return n
+    let intCopy = int;
+    let counter = 0;
+    while (!(intCopy < 1 && intCopy > -1)) {
+        intCopy -= 1;
+        counter++;
+    }
+    if (neg) {
+        return -counter - 1;
     } else {
-        let x
-        x = 1 - mod
-        return res = n + x
+        return counter;
     }
-    
-    return n
 }
-function floor(n) {
-    let mod
-    let res
-    if (n > 65000000) {
-        return n
+
+function ceil(int) {
+    if (!int) return 0;
+    let neg = false;
+    if (int < 0) {
+        neg = true;
+        int = -int;
     }
-    mod = modulo(n,1)
-    
-    if (n > 0 && mod != 0) {
-        return res = n - mod
-    } else if (mod === 0) {
-        return n
+    let intCopy = int;
+    let counter = 0;
+    while (!(intCopy < 1 && intCopy >= 0)) {
+        intCopy -= 1;
+        counter++;
+    }
+    if (neg) {
+        return -counter;
     } else {
-        let x
-        x = 1 + mod
-        return res = n - x
+        return counter + 1;
     }
-    
-    return n
 }
+
 
 function trunc(int) {
     let counter = 0;
@@ -77,24 +84,4 @@ function trunc(int) {
         return -counter;
     }
     return counter;
-}
-
-function modulo (a, b) {
-    let negative = false
-    if (b < 0 || a < 0) {
-        if (b < 0) {
-            b = -b
-        }
-        if (a < 0) {
-            negative = true
-            a = -a
-        }
-    }
-    while (a >= b) {
-        a -= b
-    }
-    if (negative) {
-        a = -a
-    }
-    return a
 }
