@@ -1,50 +1,44 @@
 function round(n) {
-
     let mod
     let res
-    let flag = false
 
-    if (n < 0) {
-        n = -n
-        flag = true
-    }
-
-    if (n > 65000000) {
+    if (n > 68719476730) {
         return n
     }
 
     mod = modulo(n,1)
-
-    if (mod > 0.5) {
-        res = n + 1 - mod
+    
+    if (mod < 0.5) {
+        return res = n - mod
     } else {
-        res = n - mod
+        let x
+        x = 1 - mod
+        return res = n + x
     }
-
-    if (flag) {
-        res = -res
-    }
-
-    return res
+    
+    return n
 }
 
 function ceil(n) {
-
     let mod
     let res
 
-    if (n > 65000000) {
+    if (n > 68719476730) {
         return n
     }
 
     mod = modulo(n,1)
-
-    if (n > 0 && mod != 0) {
-        return res = n + 1 - mod
-    } else {
+    
+    if (n < 0 && mod != 0) {
         return res = n - mod
+    } else if (mod === 0) {
+        return n
+    } else {
+        let x
+        x = 1 - mod
+        return res = n + x
     }
-
+    
     return n
 }
 
@@ -108,3 +102,5 @@ function modulo (a, b) {
     }
     return a
 }
+
+console.log(trunc(6871.7));
