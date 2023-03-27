@@ -27,4 +27,4 @@ function slice(element, start, end=element.length) {
     return [];
 }
 
-console.log(slice([1, 2, 3, 4, 5, 6], 2));
+console.log(slice([1, 2, 3, 4, 5, 6], 2), [3, 4, 5, 6]);
