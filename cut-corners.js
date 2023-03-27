@@ -9,6 +9,10 @@ function round(n) {
         flag = true
     }
 
+    if (n > 65000000) {
+        return n
+    }
+
     mod = modulo(n,1)
 
     if (mod > 0.5) {
@@ -81,20 +85,20 @@ function modulo (a, b) {
 
     if (b < 0 || a < 0) {
         if (b < 0) {
-            b = -b;
+            b = -b
         }
         if (a < 0) {
-            negative = true;
-            a = -a;
+            negative = true
+            a = -a
         }
     }
     while (a >= b) {
-        a -= b;
+        a -= b
     }
     if (negative) {
-        a = -a;
+        a = -a
     }
-    return a;
+    return a
 }
 
-console.log(round(1.6));
+console.log(round(65000000.1))
