@@ -2,6 +2,12 @@ function split(stringVar, separator) {
     var arrayVar = [];
     var word = '';
     var sepLen = separator.length;
+    if (sepLen === 0) {
+        for (var i = 0; i < stringVar.length; i++) {
+            arrayVar.push(stringVar[i]);
+        }
+        return arrayVar;
+    }
     for (var i = 0; i < stringVar.length; i++) {
         if (stringVar.slice(i, i + sepLen) === separator) {
             arrayVar.push(word);
@@ -27,4 +33,4 @@ function join(arrayVar, separator) {
     return stringVar;
 }
 
-console.log(split('a b c d', ' '));
+console.log(split('a b c d', ''));
