@@ -77,10 +77,10 @@ function trunc(n) {
     let mod
     let res
 
-    if (n > 65000000) {
+    if (n > 68719476730) {
         return n
     }
-    
+
     mod = modulo(n,1)
     
     if (n > 0 && mod != 0) {
@@ -116,4 +116,4 @@ function modulo (a, b) {
     return a
 }
 
-console.log(round(65000000.1))
+console.log(trunc(0xfffffffffffffffffffffff))
