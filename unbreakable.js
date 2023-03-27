@@ -1,6 +1,9 @@
 function split(stringVar) {
     var splitArray = [];
     for (var i = 0; i < stringVar.length; i++) {
+        if (stringVar[i] === ' ') {
+            continue;
+        }
         splitArray.push(stringVar[i]);
     }
     return splitArray;
@@ -13,3 +16,5 @@ function join(arrayVar) {
     }
     return joinedArray;
 }
+
+console.log(split('a b c', ' '));
