@@ -3,7 +3,11 @@ function reverse(arrayVar) {
     for (var i = arrayVar.length - 1; i >= 0; i--) {
         reversedArray.push(arrayVar[i]);
     }
-    return reversedArray.join('');
+    if (typeof arrayVar === 'string') {
+        return reversedArray.join('');
+    } else {
+        return reversedArray;
+    }
 }
 
-console.log(reverse('pouet'));
+console.log(reverse("OUI"));
