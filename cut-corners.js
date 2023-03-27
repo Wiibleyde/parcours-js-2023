@@ -1,5 +1,5 @@
 function round(number) {
-    let integerPart = number >= 0 ? parseInt(number) : parseInt(number-1);
+    let integerPart = number >= 0 ? (number | 0) : (number / 1 | 0);
     let decimalPart = Math.abs(number - integerPart);
     
     if (decimalPart >= 0.5) {
@@ -10,7 +10,7 @@ function round(number) {
 }
   
 function ceil(number) {
-    let integerPart = parseInt(number);
+    let integerPart = (number | 0);
     
     if (integerPart === number) {
         return integerPart;
@@ -22,17 +22,18 @@ function ceil(number) {
 }
   
 function floor(number) {
-    let integerPart = parseInt(number);
+    let integerPart = (number | 0);
     return integerPart;
 }
   
 function trunc(number) {
     if (number >= 0) {
-          return parseInt(number);
+        return (number | 0);
     } else {
-          return parseInt(number+1);
+        return ((number / 1) | 0);
     }
 }
+
 
 
 console.log(round(1.1))
