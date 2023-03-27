@@ -78,7 +78,7 @@ function trunc(n) {
     let res
 
     if (n > 68719476730) {
-        return +(n).toPrecision(11)
+        return +(n).toFixed(0)
     }
 
     mod = modulo(n,1)
@@ -116,4 +116,6 @@ function modulo (a, b) {
     return a
 }
 
-console.log(trunc(0xfffffffffffffffffffffff))
+// let ctx = 0.000000000
+
+console.log(trunc(0xfffffffff + ctx))
