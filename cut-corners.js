@@ -9,7 +9,7 @@ function round(n) {
         flag = true
     }
 
-    mod = modulo(n%1)
+    mod = modulo(n,1)
 
     if (mod > 0.5) {
         res = n + 1 - mod
@@ -28,7 +28,7 @@ function ceil(n) {
 
     let mod
     let res
-    mod = modulo(n%1)
+    mod = modulo(n,1)
 
     if (n > 0 && mod != 0) {
         return res = n + 1 - mod
@@ -43,7 +43,7 @@ function floor(n) {
 
     let mod
     let res
-    mod = modulo(n%1)
+    mod = modulo(n,1)
     
     if (n > 0 && mod != 0) {
         return res = n - mod
@@ -62,7 +62,7 @@ function trunc(n) {
 
     let mod
     let res
-    mod = modulo(n%1)
+    mod = modulo(n,1)
     
     if (n > 0 && mod != 0) {
         return res = n - mod
@@ -78,7 +78,7 @@ function trunc(n) {
 function modulo (a, b) {
 
     let negative = false
-    
+
     if (b < 0 || a < 0) {
         if (b < 0) {
             b = -b;
