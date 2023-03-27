@@ -115,7 +115,3 @@ function modulo (a, b) {
     }
     return a
 }
-
-// let ctx = 0.000000000
-
-console.log(trunc(0xfffffffff + ctx))
