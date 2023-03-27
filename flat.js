@@ -1,13 +1,16 @@
-function flat(arrayVar) {
-    var flatArray = [];
-    for (var i = 0; i < arrayVar.length; i++) {
-        if (Array.isArray(arrayVar[i])) {
-            flatArray = flatArray.concat(flat(arrayVar[i]));
-        } else {
-            flatArray.push(arrayVar[i]);
-        }
-    }
-    return flatArray;
-}
+Array.prototype.flat = undefined; // Remove the original Array.prototype.flat method
 
-console.log(flat([1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]]));
+function flat(arr, depth = 1) {
+    if (depth < 1) {
+        return arr.slice();
+    }
+
+    return arr.reduce((acc, val) => {
+        if (Array.isArray(val)) {
+            acc.push(...flat(val, depth - 1));
+        } else {
+            acc.push(val);
+        }
+        return acc;
+    }, []);
+}
