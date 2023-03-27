@@ -27,10 +27,12 @@ function keepLast(stringVar) {
 function keepFirstLast(stringVar) {
     if (stringVar.length <= 2) {
         return stringVar
+    } else if (stringVar.length <= 3) {
+        return stringVar
     }
     let twoFirst = keepFirst(stringVar)
     let twoLast = keepLast(stringVar)
     return twoFirst + twoLast
 }
 
-console.log(keepFirstLast('af'))
+console.log(keepFirstLast('afd'))
