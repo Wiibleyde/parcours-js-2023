@@ -25,9 +25,12 @@ function keepLast(stringVar) {
 }
 
 function keepFirstLast(stringVar) {
+    if (stringVar.length <= 2) {
+        return stringVar
+    }
     let twoFirst = keepFirst(stringVar)
     let twoLast = keepLast(stringVar)
     return twoFirst + twoLast
 }
 
-console.log(keepFirstLast("Guillaume"))
+console.log(keepFirstLast('af'))
