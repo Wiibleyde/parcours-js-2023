@@ -32,5 +32,3 @@ function join(arrayVar, separator) {
     }
     return stringVar;
 }
-
-console.log(split('a b c d', ''));
