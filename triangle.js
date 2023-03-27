@@ -4,7 +4,9 @@ function triangle(string,size) {
         for (var j = 0; j <= i; j++) {
         result += string;
         }
-        result += "\n";
+        if (i < size - 1) {
+            result += "\n";
+        }
     }
     return result;
 }
