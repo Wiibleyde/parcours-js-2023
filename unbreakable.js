@@ -1,15 +1,12 @@
 function split(stringVar, separator) {
     var arrayVar = [];
     var word = '';
+    var sepLen = separator.length;
     for (var i = 0; i < stringVar.length; i++) {
-        if (stringVar[i] === separator[0]) {
-            if (stringVar[i + 1] === separator[1]) {
-                arrayVar.push(word);
-                word = '';
-                i++;
-            } else {
-                word += stringVar[i];
-            }
+        if (stringVar.slice(i, i + sepLen) === separator) {
+            arrayVar.push(word);
+            word = '';
+            i += sepLen - 1;
         } else {
             word += stringVar[i];
         }
@@ -30,4 +27,4 @@ function join(arrayVar, separator) {
     return stringVar;
 }
 
-console.log(split('ggg - ddd - b', ' - '));
+console.log(split('a b c d', ' '));
