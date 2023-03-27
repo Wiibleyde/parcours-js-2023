@@ -32,6 +32,11 @@ function ceil(n) {
 
     let mod
     let res
+
+    if (n > 65000000) {
+        return n
+    }
+
     mod = modulo(n,1)
 
     if (n > 0 && mod != 0) {
@@ -47,6 +52,11 @@ function floor(n) {
 
     let mod
     let res
+
+    if (n > 65000000) {
+        return n
+    }
+
     mod = modulo(n,1)
     
     if (n > 0 && mod != 0) {
@@ -66,6 +76,11 @@ function trunc(n) {
 
     let mod
     let res
+
+    if (n > 65000000) {
+        return n
+    }
+    
     mod = modulo(n,1)
     
     if (n > 0 && mod != 0) {
