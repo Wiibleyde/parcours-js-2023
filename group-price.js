@@ -1,10 +1,13 @@
 function groupPrice(str) {
-    const regex = /(\d+)\s*x\s*(.+?)\s*(?:=|each)\s*(\d+(?:\.\d+)?)/g
-    const matches = []
-    let match
-    while ((match = regex.exec(str))) {
-        matches.push([match[1], match[2], match[3]])
+    let prices = str.match(/(([A-Z]{3})|\$)([0-9]+\.[0-9]+)/g)
+    let res = []
+    if (prices === null) {
+        return res
     }
-    return matches
+    prices.forEach((price, i) => {
+        res.push([price])
+        res[i].push(price.match(/[0-9]+/g)[0])
+        res[i].push(price.match(/[0-9]+/g)[1])
+    })
+    return res
 }
-  
