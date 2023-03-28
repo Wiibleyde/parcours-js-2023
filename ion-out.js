@@ -1,10 +1,9 @@
 function ionOut(stringVar) {
-    let rexp = /t\w*ion/g;
-    let test = stringVar.match(rexp);
-    if (test !== null) {
-        for (let i = 0; i < test.length; i++) {
-            test[i] = test[i].replace(/ion/g, "");
-        }
-    }
-    return test;
+    let arr = stringVar.split(" ");
+    let rexp = /tion/g;
+    let res = [];
+    arr.forEach((word) => {word.match(rexp) ? res.push(word.replace(/[.,?!]/g, "").slice(0, -3)): null});
+    return res;
 }
+
+console.log(ionOut('attention, direction'));
