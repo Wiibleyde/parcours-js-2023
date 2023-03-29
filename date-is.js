@@ -21,6 +21,12 @@ function isFuture(date) {
 }
 
 function isPast(date) {
+    if (typeof date === 'number') {
+        if (isNaN(date)) {
+            return false;
+        }
+        return date < Date.now();
+    }
     return date < Date.now();
 }
 
