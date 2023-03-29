@@ -22,13 +22,3 @@ function addWeek(date) {
 function timeTravel(date) {
     return new Date(date.date.setHours(date.hour, date.minute, date.second));
 }
-
-console.log(addWeek(new Date('0001-01-13')));
-console.log(
-    timeTravel({
-        date: new Date('2020-05-29 23:25:22'),
-        hour: 21,
-        minute: 22,
-        second: 22,
-    }).toString()
-  );
