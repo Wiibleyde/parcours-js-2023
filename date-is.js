@@ -1,5 +1,5 @@
 function isValid(date) {
-    if (typeof date === 'integer') {
+    if (typeof date === 'number') {
         return true;
     }
     return date instanceof Date && !isNaN(date);
