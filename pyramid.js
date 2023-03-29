@@ -21,4 +21,4 @@ function pyramid(string,size) {
     return result;
 }
 
-console.log(pyramid("ඞ", 8));
+console.log(pyramid("ඞ", 80));
