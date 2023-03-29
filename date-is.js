@@ -1,7 +1,10 @@
 function isValid(date) {
+    if (date === NaN) {
+        return false;
+    } 
     if (typeof date === 'number') {
         return true;
-    }
+    } 
     return date instanceof Date && !isNaN(date);
 }
 
@@ -21,4 +24,4 @@ function isPast(date) {
     return date < Date.now();
 }
 
-console.log(isValid(Date.now())); // false
+console.log(isValid(NaN)); // false
