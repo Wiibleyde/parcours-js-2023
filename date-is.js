@@ -41,3 +41,5 @@ function isPast(date) {
     }
     return false;
 }
+
+console.log(isValid(''));
