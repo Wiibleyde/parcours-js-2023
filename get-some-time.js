@@ -13,10 +13,7 @@ function firstDayWeek(week, year) {
             year + "-" + monthDate[0] + "-" + monthDate[1] + "T02:39:49"
     }
     if (week === 2 && year === "2023") return "02-01-2023"
-    let date =
-        dateString === undefined
-            ? new Date(year, 0, 1 + (week - 1) * 7, 2)
-            : new Date(dateString)
+    let date = dateString === undefined ? new Date(year, 0, 1 + (week - 1) * 7, 2) : new Date(dateString)
     date.setHours(0, 0, 0, 0)
     let dateCopy = new Date(date)
     date.setDate(date.getDate() - date.getDay() + 1)
