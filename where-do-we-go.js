@@ -118,4 +118,4 @@ function compareCoordinates(a, b) {
     }
 }
 
-export { explore };
+export { explore }
