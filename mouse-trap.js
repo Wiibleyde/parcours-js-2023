@@ -20,6 +20,7 @@ class Circle {
         this.trapped()
         document.body.appendChild(this.HTML)
     }
+    // Moves the circle to the given x and y coordinates
     move(x, y) {
         this.trapped()
         if (!this.isTrapped) {
@@ -45,7 +46,12 @@ class Circle {
         }
     }
     trapped() {
-        if (this.x > box.x && this.x + this.diameter < box.x + box.width && this.y > box.y && this.y + this.diameter < box.y + box.height) {
+        if (
+            this.x > box.x &&
+            this.x + this.diameter < box.x + box.width &&
+            this.y > box.y &&
+            this.y + this.diameter < box.y + box.height
+        ) {
             this.isTrapped = true
             this.HTML.style.background = "var(--purple)"
         } else {
@@ -54,7 +60,12 @@ class Circle {
         }
     }
     inReactangle(x, y) {
-        if (x > box.x && x + this.diameter < box.x + box.width && y > box.y && y + this.diameter < box.y + box.height) {
+        if (
+            x > box.x &&
+            x + this.diameter < box.x + box.width &&
+            y > box.y &&
+            y + this.diameter < box.y + box.height
+        ) {
             return true
         } else {
             return false
@@ -87,16 +98,12 @@ document.body.addEventListener("mousemove", (e) => {
 })
 
 function createCircle(e) {
-    if (e === undefined) {
-        return
-    }
+    if (e === undefined) return
     new Circle(e.clientX - 25, e.clientY - 25)
 }
 
 function moveCircle(e) {
-    if (e === undefined || circles.length === 0) {
-        return
-    }
+    if (e === undefined || circles.length === 0) return
     circles[circles.length - 1].move(e.clientX - 25, e.clientY - 25)
 }
 
