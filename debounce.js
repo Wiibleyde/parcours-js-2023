@@ -16,8 +16,8 @@ function opDebounce(func, waitTime, options) {
         leading = !!options.leading
     }
     return function () {
-        let context = this,
-        args = arguments
+        let context = this
+        let args = arguments
         if (first && leading) {
             func.apply(context, args)
             first = false
@@ -36,7 +36,7 @@ const debounceFunc = debounce(() => {
 
 const opDebounceFunc = opDebounce(() => {
     console.log('opDebounce')
-}, 1000, {leading: true})
+}, 1000, {leading: false})
 
 debounceFunc()
 opDebounceFunc()
