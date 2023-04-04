@@ -1,7 +1,7 @@
 function throttle(func, waitTime) {
     let last = 0
     return function () {
-        const now = now + new Date()
+        const now = +new Date()
         if (now - last > waitTime) {
             func.apply(this, arguments)
             last = now
@@ -13,7 +13,7 @@ function opThrottle(func, waitTime, { leading = false, trailing = true } = {}) {
     let last = 0
     let timer = null
     return function () {
-        const now = now + new Date()
+        const now = +new Date()
         if (!last && leading === false) {
             last = now
         }
